@@ -23,9 +23,9 @@ app.use(session({
 }))
 
 
-app.use('/images', express.static(path.resolve(__dirname, 'static/images')))
-app.use('/css', express.static(path.resolve(__dirname, 'static/css')))
-app.use('/js', express.static(path.resolve(__dirname, 'static/js')))
+app.use('/images', express.static(path.resolve(__dirname, '/images')))
+app.use('/css', express.static(path.resolve(__dirname, '/css')))
+app.use('/js', express.static(path.resolve(__dirname, '/js')))
 
 app.get('/', (req, res) => {
     res.render('index', {
@@ -33,14 +33,19 @@ app.get('/', (req, res) => {
     })
 })
 app.get('/', (req, res) => {
-    res.render('about', {
-        title: "About"
+    res.render('cart', {
+        title: "cart"
     })
 })
 
 app.get('/', (req, res) => {
-    res.render('contact', {
-        title: "Contact"
+    res.render('product', {
+        title: "Product"
+    })
+})
+app.get('/', (req, res) => {
+    res.render('productDetails', {
+        title: "ProductDetails"
     })
 })
 app.get('/register', (req, res) => {
